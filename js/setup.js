@@ -34,61 +34,61 @@ var randomElementArray = function (nameArray) {
 };
 
 // Закрытие окна setup по нажатию ESC
-var onPopupEscPress = function(evt) {
-  if (evt.keyCode == ESC_KEYCODE) {
-      closePopup();
-    }
+var onPopupEscPress = function (evt) {
+  if (evt.keyCode === ESC_KEYCODE) {
+    closePopup();
+  }
 };
 // Открытие окна setup
-var openPopup = function() {
+var openPopup = function () {
   setup.classList.remove('hidden');
-  document.addEventListener('keydown', onPopupEscPress)
+  document.addEventListener('keydown', onPopupEscPress);
 };
 
 // Закрытие окна setup
-var closePopup = function() {
+var closePopup = function () {
   setup.classList.add('hidden');
   document.removeEventListener('keydown', onPopupEscPress);
 };
 
 // Открытие окна по клику мышки
-setupOpen.addEventListener('click', function() {
+setupOpen.addEventListener('click', function () {
   openPopup();
 });
 
 // Открытие окна по кнопке Enter
-setupOpen.addEventListener('keydown', function(evt) {
+setupOpen.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     openPopup();
-  };
+  }
 });
 
 // Закрытие окна по клику мышки
-setupClose.addEventListener('click', function() {
+setupClose.addEventListener('click', function () {
   closePopup();
 });
 
 // Закрытие окна по кнопке ESC
-setupClose.addEventListener('keydown', function(evt) {
+setupClose.addEventListener('keydown', function (evt) {
   if (evt.keyCode === ENTER_KEYCODE) {
     closePopup();
   }
 });
 
 // Изменение цвета мантии по клику
-wizardCoat.addEventListener('click', function() {
+wizardCoat.addEventListener('click', function () {
   wizardCoat.style.fill = COAT_COLOR[randomElementArray(COAT_COLOR)];
   wizardCoatInput[0].value = wizardCoat.style.fill;
 });
 
 // Изменение цвета глаз по клику
-wizardEyes.addEventListener('click', function() {
+wizardEyes.addEventListener('click', function () {
   wizardEyes.style.fill = EYES_COLOR[randomElementArray(EYES_COLOR)];
   wizardEyesInput[0].value = wizardEyes.style.fill;
 });
 
 // Изменение цвета файрболла по клику
-wizardFireball.addEventListener('click', function() {
+wizardFireball.addEventListener('click', function () {
   var color = FIREBALL_COLOR[randomElementArray(FIREBALL_COLOR)];
   wizardFireball.setAttribute('style', 'background: ' + color);
   wizardFireballInput[0].value = color;
