@@ -8,7 +8,7 @@
 
   fileChooser.addEventListener('change', function () {
     var file = fileChooser.files[0];
-    var fileName =  file.name.toLowerCase();
+    var fileName = file.name.toLowerCase();
 
     var matches = FILE_TYPES.some(function (it) {
       return fileName.endsWith(it);
@@ -19,7 +19,6 @@
 
       reader.addEventListener('load', function () {
         preview.src = reader.result;
-        console.log(preview.src);
       });
 
       reader.readAsDataURL(file);
